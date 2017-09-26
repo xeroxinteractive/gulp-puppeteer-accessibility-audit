@@ -1,0 +1,21 @@
+{
+  "name": "gulp-puppeteer-accessibility-audit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Paul Hawxby <phawxby@gmail.com>",
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "gulp-util": "^3.0.8",
+    "indent-string": "^3.2.0",
+    "log-symbols": "^2.1.0",
+    "map-stream": "^0.0.7",
+    "puppeteer-accessibility-audit": "^1.0.3",
+    "through2": "^2.0.3"
+  },
+  "devDependencies": {
+    "jest": "^21.1.0"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}

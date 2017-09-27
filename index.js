@@ -41,11 +41,11 @@ var plugin = (opts) => {
     });
 };
 
-plugin.failOnError = function () {
+plugin.failOnError = () => {
 
-  return map(function (file, cb) {
+  return map((file, cb) => {
 
-    var report = utils.formatReport(file, file.paa, true),
+    var report = utils.formatReport(file, true),
         error  = null;
 
     if (report) {
@@ -62,13 +62,13 @@ plugin.failOnError = function () {
 
 };
 
-plugin.failAfterError = function () {
+plugin.failAfterError = () => {
 
   var errors = [];
 
-  return map(function (file, cb) {
+  return map((file, cb) => {
 
-    var report = utils.formatReport(file, file.paa, true);
+    var report = utils.formatReport(file, true);
 
     if (report) {
       errors.push(report);
@@ -76,7 +76,7 @@ plugin.failAfterError = function () {
 
     cb(null, file);
 
-  }).once('end', function () {
+  }).once('end', () => {
 
     if (errors.length) {
       var error = new PluginError(PLUGIN_NAME, {
@@ -91,15 +91,15 @@ plugin.failAfterError = function () {
 
 };
 
-plugin.reporter = function (writable) {
+plugin.reporter = (writable) => {
 
   var results = [];
 
   writable = utils.resolveWritable(writable);
 
-  return map(function (file, cb) {
+  return map((file, cb) => {
 
-    var report = utils.formatReport(file, file.paa);
+    var report = utils.formatReport(file);
 
     if (report) {
       results.push(report);
@@ -107,7 +107,7 @@ plugin.reporter = function (writable) {
 
     cb(null, file);
 
-  }).once('end', function () {
+  }).once('end', () => {
 
     if (results.length) {
       utils.writeReport(results.join(''), writable);

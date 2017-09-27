@@ -38,6 +38,7 @@ test('should format a report', (done) => {
 
   var report = paa.reporter(function (output) {
     expect(output).not.toBeNull();
+    expect(output).toMatchSnapshot();
   });
 
   stream.on('end', function () {
@@ -58,7 +59,8 @@ test('Should audit the file and throw an error', (done) => {
     expect(file.paa).toHaveProperty("audit");
     expect(file.paa).toHaveProperty("report");
 
-    expect(file.paa).toMatchSnapshot();
+    expect(file.paa.audit).toMatchSnapshot();
+    expect(file.paa.report).toMatchSnapshot();
   });
 
   fail.on('error', function (error) {

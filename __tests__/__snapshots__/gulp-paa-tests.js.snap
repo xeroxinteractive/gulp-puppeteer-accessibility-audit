@@ -1,91 +1,93 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should audit the file and throw an error 1`] = `
-Object {
-  "audit": Array [
-    Object {
-      "code": "AX_ARIA_12",
-      "elements": "",
-      "heading": "This element does not support ARIA roles, states and properties",
-      "result": "PASS",
-      "severity": "Warning",
-      "url": "https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_aria_12",
-    },
-    Object {
-      "code": "AX_ARIA_06",
-      "elements": "",
-      "heading": "aria-owns should not be used if ownership is implicit in the DOM",
-      "result": "NA",
-      "severity": "Warning",
-      "url": "https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_aria_06",
-    },
-    Object {
-      "code": "AX_ARIA_09",
-      "elements": "",
-      "heading": "Elements with ARIA roles must be in the correct scope",
-      "result": "PASS",
-      "severity": "Severe",
-      "url": "https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_aria_09",
-    },
-    Object {
-      "code": "AX_AUDIO_01",
-      "elements": "",
-      "heading": "Audio elements should have controls",
-      "result": "PASS",
-      "severity": "Warning",
-      "url": "https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_audio_01",
-    },
-    Object {
-      "code": "AX_ARIA_11",
-      "elements": "",
-      "heading": "This element has an invalid ARIA attribute",
-      "result": "PASS",
-      "severity": "Warning",
-      "url": "https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_aria_11",
-    },
-    Object {
-      "code": "AX_ARIA_04",
-      "elements": "
+Array [
+  Object {
+    "code": "AX_ARIA_12",
+    "elements": "",
+    "heading": "This element does not support ARIA roles, states and properties",
+    "result": "PASS",
+    "severity": "Warning",
+    "url": "https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_aria_12",
+  },
+  Object {
+    "code": "AX_ARIA_06",
+    "elements": "",
+    "heading": "aria-owns should not be used if ownership is implicit in the DOM",
+    "result": "NA",
+    "severity": "Warning",
+    "url": "https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_aria_06",
+  },
+  Object {
+    "code": "AX_ARIA_09",
+    "elements": "",
+    "heading": "Elements with ARIA roles must be in the correct scope",
+    "result": "PASS",
+    "severity": "Severe",
+    "url": "https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_aria_09",
+  },
+  Object {
+    "code": "AX_AUDIO_01",
+    "elements": "",
+    "heading": "Audio elements should have controls",
+    "result": "PASS",
+    "severity": "Warning",
+    "url": "https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_audio_01",
+  },
+  Object {
+    "code": "AX_ARIA_11",
+    "elements": "",
+    "heading": "This element has an invalid ARIA attribute",
+    "result": "PASS",
+    "severity": "Warning",
+    "url": "https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_aria_11",
+  },
+  Object {
+    "code": "AX_ARIA_04",
+    "elements": "
 DIV:nth-of-type(3) > INPUT
 DIV:nth-of-type(5) > INPUT
 #aria-invalid",
-      "heading": "ARIA state and property values must be valid",
-      "result": "FAIL",
-      "severity": "Severe",
-      "url": "https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_aria_04",
-    },
-    Object {
-      "code": "AX_ARIA_01",
-      "elements": "
+    "heading": "ARIA state and property values must be valid",
+    "result": "FAIL",
+    "severity": "Severe",
+    "url": "https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_aria_04",
+  },
+  Object {
+    "code": "AX_ARIA_01",
+    "elements": "
 DIV:nth-of-type(11) > SPAN",
-      "heading": "Elements with ARIA roles must use a valid, non-abstract ARIA role",
-      "result": "FAIL",
-      "severity": "Severe",
-      "url": "https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_aria_01",
-    },
-    Object {
-      "code": "AX_TEXT_01",
-      "elements": "
+    "heading": "Elements with ARIA roles must use a valid, non-abstract ARIA role",
+    "result": "FAIL",
+    "severity": "Severe",
+    "url": "https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_aria_01",
+  },
+  Object {
+    "code": "AX_TEXT_01",
+    "elements": "
 DIV > INPUT
 DIV:nth-of-type(12) > DIV:nth-of-type(3) > INPUT
 LABEL > INPUT",
-      "heading": "Controls and media elements should have labels",
-      "result": "FAIL",
-      "severity": "Severe",
-      "url": "https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_text_01",
-    },
-    Object {
-      "code": "AX_HTML_02",
-      "elements": "
+    "heading": "Controls and media elements should have labels",
+    "result": "FAIL",
+    "severity": "Severe",
+    "url": "https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_text_01",
+  },
+  Object {
+    "code": "AX_HTML_02",
+    "elements": "
 #forInput
 #forInput",
-      "heading": "Any ID referred to via an IDREF must be unique in the DOM",
-      "result": "FAIL",
-      "severity": "Severe",
-      "url": "https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_html_02",
-    },
-  ],
-  "report": "*** Begin accessibility audit results ***
+    "heading": "Any ID referred to via an IDREF must be unique in the DOM",
+    "result": "FAIL",
+    "severity": "Severe",
+    "url": "https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_html_02",
+  },
+]
+`;
+
+exports[`Should audit the file and throw an error 2`] = `
+"*** Begin accessibility audit results ***
 An accessibility audit found 
 Errors:
 Error: AX_ARIA_04 (ARIA state and property values must be valid) failed on the following elements (1 - 3 of 3):
@@ -110,6 +112,38 @@ Error: AX_HTML_02 (Any ID referred to via an IDREF must be unique in the DOM) fa
 See https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_html_02 for more information.
 
 
-*** End accessibility audit results ***",
-}
+*** End accessibility audit results ***"
+`;
+
+exports[`should format a report 1`] = `
+"
+
+  [33mC:\\\\Users\\\\Z269CJBB\\\\Documents\\\\GitHub\\\\gulp-puppeteer-accessibility-audit\\\\__tests__/fixture.html[39m
+
+  [31m×[39m ARIA state and property values must be valid
+
+  DIV:nth-of-type(3) > INPUT
+  DIV:nth-of-type(5) > INPUT
+  #aria-invalid
+
+  [31m×[39m Elements with ARIA roles must use a valid, non-abstract ARIA role
+
+  DIV:nth-of-type(11) > SPAN
+
+  [31m×[39m Controls and media elements should have labels
+
+  DIV > INPUT
+  DIV:nth-of-type(12) > DIV:nth-of-type(3) > INPUT
+  LABEL > INPUT
+
+  [31m×[39m Any ID referred to via an IDREF must be unique in the DOM
+
+  #forInput
+  #forInput
+
+  [32m√[39m This element does not support ARIA roles, states and properties
+  [32m√[39m Elements with ARIA roles must be in the correct scope
+  [32m√[39m Audio elements should have controls
+  [32m√[39m This element has an invalid ARIA attribute
+"
 `;

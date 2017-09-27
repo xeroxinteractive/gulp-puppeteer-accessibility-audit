@@ -25,14 +25,12 @@ var Utils = {
   /**
    * Format report.
    */
-  formatReport: function (file, report, onlyFailures) {
+  formatReport: function (file, onlyFailures = false) {
 
-    var audits   = report.audit || [],
+    var audits   = file.paa.audit || [],
         output   = '',
         passes   = '',
         failures = '';
-
-    onlyFailures = onlyFailures || false;
 
     audits.forEach(function (audit) {
       if (audit.result === 'PASS' && !onlyFailures) {

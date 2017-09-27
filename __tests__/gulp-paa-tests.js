@@ -40,7 +40,6 @@ test('should format a report', (done) => {
 
   let report = paa.reporter(function (output) {
     expect(output).not.toBeNull();
-    expect(output).toMatchSnapshot();
   });
 
   stream.on('end', function () {
@@ -69,7 +68,6 @@ test('Should audit the file and throw  at the first error', (done) => {
   fail.on('error', function (error) {
     thrown = true;
     expect(error).not.toBeNull();
-    expect(error).toMatchSnapshot();
     done();
   });
 
@@ -101,7 +99,6 @@ test.skip('Should audit the file and throw at the end', (done) => {
     fail.on('error', function (error) {
       thrown = true;
       expect(error).not.toBeNull();
-      expect(error).toMatchSnapshot();
       done();
     });
   

@@ -17,11 +17,7 @@ beforeEach(async () => {
     path: __dirname + '/fixture.html'
   });
 
-  stream = paa({
-    puppeteerConfig: {
-      headless: false
-    }
-  });
+  stream = paa();
 });
 
 test('should return a report', (done) => {

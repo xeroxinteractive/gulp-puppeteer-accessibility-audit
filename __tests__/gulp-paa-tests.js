@@ -49,7 +49,7 @@ test('should format a report', (done) => {
   stream.end();
 });
 
-test('should fail on error', (done) => {
+test('Should audit the file and throw an error', (done) => {
 
   var fail = paa.failOnError();
 
@@ -57,6 +57,8 @@ test('should fail on error', (done) => {
     expect(file).toHaveProperty("paa");
     expect(file.paa).toHaveProperty("audit");
     expect(file.paa).toHaveProperty("report");
+
+    expect(file.paa).toMatchSnapshot();
   });
 
   fail.on('error', function (error) {

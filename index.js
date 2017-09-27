@@ -6,29 +6,39 @@ const gutil         = require('gulp-util');
 const logSymbols    = require('log-symbols');
 const indentString  = require('indent-string');
 const paa           = require('puppeteer-accessibility-audit');
+const through       = require('through2');
 
 const PLUGIN_NAME = 'gulp-puppeteer-accessibility-audit';
 const PluginError  = gutil.PluginError;
 
-var plugin = function (opts) {
+var plugin = (opts) => {
+  opts = Object.assign({}, opts);
 
-  return map(function (file, cb) {
-    paa(file.path, opts || {}, function (err, audit, report) {
+  let launched = false;
 
-      if (err) {
+  return through.obj(
+    async (file, enc, cb) => {
+      try {
+        if (!launched) {
+          await paa.launch(opts);
+          launched = true;
+        }
+
+        let paaResult = await paa.audit(file.path, opts);
+
+        file.paa = paaResult;
+        
+        cb(null, file);
+      }
+      catch (err) {
         cb(new PluginError(PLUGIN_NAME, { name: PLUGIN_NAME, message: err.message }), file);
       }
-
-      file.paa = {
-        audit: audit,
-        report: report
-      };
-
-      cb(null, file);
-
+    },
+    async (cb) => {
+      await paa.destroy();
+      
+      cb();
     });
-  });
-
 };
 
 plugin.failOnError = function () {

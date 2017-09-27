@@ -24,7 +24,7 @@ var plugin = (opts) => {
           launched = true;
         }
 
-        let paaResult = await paa.audit(file.path, opts);
+        let paaResult = await paa.audit(file.path);
 
         file.paa = paaResult;
         

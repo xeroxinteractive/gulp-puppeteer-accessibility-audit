@@ -36,6 +36,7 @@ var plugin = (opts) => {
     },
     async (cb) => {
       await paa.destroy();
+      launched = false;
       
       cb();
     });
@@ -76,7 +77,7 @@ plugin.failAfterError = () => {
 
     cb(null, file);
 
-  }).once('end', () => {
+  }).once('end', function () {
 
     if (errors.length) {
       var error = new PluginError(PLUGIN_NAME, {
@@ -86,9 +87,7 @@ plugin.failAfterError = () => {
 
       this.emit('error', error);
     }
-
   });
-
 };
 
 plugin.reporter = (writable) => {

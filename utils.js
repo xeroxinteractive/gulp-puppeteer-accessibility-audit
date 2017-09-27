@@ -27,26 +27,29 @@ var Utils = {
    */
   formatReport: function (file, onlyFailures = false) {
 
-    var audits   = file.paa.audit || [],
-        output   = '',
-        passes   = '',
-        failures = '';
+    let output   = '';
 
-    audits.forEach(function (audit) {
-      if (audit.result === 'PASS' && !onlyFailures) {
-        passes += logSymbols.success + ' ' + audit.heading + '\n';
-      }
-      if (audit.result === 'FAIL') {
-        failures += logSymbols.error + ' ' + audit.heading + '\n';
-        failures += audit.elements + '\n\n';
-      }
-    });
+    if (file && file.paa) {
+      let audits   = file.paa.audit || [];
+      let passes   = '';
+      let failures = '';
 
-    if (passes || failures) {
-      output += '\n\n';
-      output += indentString(gutil.colors.yellow(file.path), 2);
-      output += '\n\n';
-      output += indentString(failures + passes, 2);
+      audits.forEach(function (audit) {
+        if (audit.result === 'PASS' && !onlyFailures) {
+          passes += logSymbols.success + ' ' + audit.heading + '\n';
+        }
+        if (audit.result === 'FAIL') {
+          failures += logSymbols.error + ' ' + audit.heading + '\n';
+          failures += audit.elements + '\n\n';
+        }
+      });
+
+      if (passes || failures) {
+        output += '\n\n';
+        output += indentString(gutil.colors.yellow(file.path), 2);
+        output += '\n\n';
+        output += indentString(failures + passes, 2);
+      }
     }
 
     return output;

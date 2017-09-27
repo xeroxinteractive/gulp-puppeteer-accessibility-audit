@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Should audit the file and throw an error 1`] = `
+exports[`Should audit the file and throw  at the first error 1`] = `
 Array [
   Object {
     "code": "AX_ARIA_12",
@@ -86,7 +86,7 @@ LABEL > INPUT",
 ]
 `;
 
-exports[`Should audit the file and throw an error 2`] = `
+exports[`Should audit the file and throw  at the first error 2`] = `
 "*** Begin accessibility audit results ***
 An accessibility audit found 
 Errors:
@@ -113,6 +113,64 @@ See https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rul
 
 
 *** End accessibility audit results ***"
+`;
+
+exports[`Should audit the file and throw  at the first error 3`] = `
+[gulp-puppeteer-accessibility-audit: 
+
+  [33mC:\\Users\\Z269CJBB\\Documents\\GitHub\\gulp-puppeteer-accessibility-audit\\__tests__/fixture.html[39m
+
+  [31m×[39m ARIA state and property values must be valid
+
+  DIV:nth-of-type(3) > INPUT
+  DIV:nth-of-type(5) > INPUT
+  #aria-invalid
+
+  [31m×[39m Elements with ARIA roles must use a valid, non-abstract ARIA role
+
+  DIV:nth-of-type(11) > SPAN
+
+  [31m×[39m Controls and media elements should have labels
+
+  DIV > INPUT
+  DIV:nth-of-type(12) > DIV:nth-of-type(3) > INPUT
+  LABEL > INPUT
+
+  [31m×[39m Any ID referred to via an IDREF must be unique in the DOM
+
+  #forInput
+  #forInput
+
+]
+`;
+
+exports[`Should audit the file and throw at the end 1`] = `
+[gulp-puppeteer-accessibility-audit: 
+
+  [33mC:\\Users\\Z269CJBB\\Documents\\GitHub\\gulp-puppeteer-accessibility-audit\\__tests__/fixture.html[39m
+
+  [31m×[39m ARIA state and property values must be valid
+
+  DIV:nth-of-type(3) > INPUT
+  DIV:nth-of-type(5) > INPUT
+  #aria-invalid
+
+  [31m×[39m Elements with ARIA roles must use a valid, non-abstract ARIA role
+
+  DIV:nth-of-type(11) > SPAN
+
+  [31m×[39m Controls and media elements should have labels
+
+  DIV > INPUT
+  DIV:nth-of-type(12) > DIV:nth-of-type(3) > INPUT
+  LABEL > INPUT
+
+  [31m×[39m Any ID referred to via an IDREF must be unique in the DOM
+
+  #forInput
+  #forInput
+
+]
 `;
 
 exports[`should format a report 1`] = `
